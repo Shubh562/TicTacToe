@@ -1,5 +1,8 @@
 package controller;
 
+import exception.BotCountException;
+import exception.PlayerCountDimensionMisMatchException;
+import exception.SymbolCountException;
 import model.Game;
 import model.GameState;
 import model.Player;
@@ -8,10 +11,10 @@ import strategies.winning.WinningStrategy;
 import java.util.List;
 
 public class GameController {
-    public void startGame(int dimension,
+    public Game startGame(int dimension,
                           List<Player> players,
-                          List<WinningStrategy> winningStrategies) {
-        Game.getBuilder()
+                          List<WinningStrategy> winningStrategies) throws PlayerCountDimensionMisMatchException, BotCountException, SymbolCountException {
+        return Game.getBuilder()
                 .setDimensions(dimension)
                 .setPlayers(players)
                 .setWinningStrategies(winningStrategies)
@@ -22,7 +25,7 @@ public class GameController {
 
     }
     public void displayBoard(Game game){
-
+        game.displayBoard();
     }
     public void getWinner(Game game){
 

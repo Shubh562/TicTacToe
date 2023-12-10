@@ -37,4 +37,6 @@ public class Cell {
     public void setCellStatus(CellStatus cellStatus) {
         this.cellStatus = cellStatus;
     }
+
+
 }
