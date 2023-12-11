@@ -1,11 +1,15 @@
 package model;
 
-public enum Symbol {
+public class Symbol {
     ;
     private char aChar;
 
     public char getaChar() {
         return aChar;
+    }
+
+    public Symbol(char aChar) {
+        this.aChar = aChar;
     }
 
     public void setaChar(char aChar) {

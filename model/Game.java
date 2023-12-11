@@ -113,6 +113,19 @@ public class Game {
         Move move=currentPlayer.makeMove(board);
         //Ask the player to tell which cell to move on
         moves.add(move);
+        for(WinningStrategy w:winningStrategies) {
+            if (w.getWinner(move, board)) {
+                setGameState(GameState.ENDED);
+                setWinner(currentPlayer);
+                return;
+            }
+            if (moves.size() == board.getSize() * board.getSize()) {
+                // Game has drawn
+                setGameState(GameState.DRAW);
+                return;
+            }
+        }
+        currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
     }
     public static Builder getBuilder(){
         return new Builder();

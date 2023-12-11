@@ -14,6 +14,11 @@ public class Bot extends Player{
         this.botDifficultyLevel = botDifficultyLevel;
     }
 
+    public Bot(String name, int id, Symbol symbol, PlayerType playerType, BotDifficultyLevel botDifficultyLevel) {
+        super(name, id, symbol, playerType);
+        this.botDifficultyLevel = botDifficultyLevel;
+    }
+
     @Override
     public Move makeMove(Board board) {
         System.out.println("Its " + getName() + "'s turn");

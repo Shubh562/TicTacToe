@@ -22,13 +22,13 @@ public class GameController {
 
     }
     public void makeMove(Game game){
-
+        game.makeMove();
     }
     public void displayBoard(Game game){
         game.displayBoard();
     }
-    public void getWinner(Game game){
-
+    public Player getWinner(Game game){
+        return game.getWinner();
     }
     public GameState checkState(Game game){
     return game.getGameState();
